@@ -1,0 +1,11 @@
+# 默认忽略全部
+*
+
+# 白名单：目录 + 内容都必须显式声明
+!knowledge/
+!knowledge/**
+!skills/
+!skills/**
+!settings.json
+!CLAUDE.md
+!.gitignore
