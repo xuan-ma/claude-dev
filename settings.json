@@ -28,6 +28,12 @@
         "type": "command",
         "command": "~/.claude/skills/continuous-learning-v2/hooks/observe.sh"
       }]
+    }, {
+      "matcher": "Write|Edit",
+      "hooks": [{
+        "type": "command",
+        "command": "bash ~/.claude/scripts/auto-commit.sh"
+      }]
     }]
   },
   "enabledPlugins": {
