@@ -6,6 +6,8 @@
 !knowledge/**
 !skills/
 !skills/**
+!scripts/
+!scripts/**
 !settings.json
 !CLAUDE.md
 !.gitignore
