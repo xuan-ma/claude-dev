@@ -1,13 +1,21 @@
 # 默认忽略全部
 *
 
-# 白名单：目录 + 内容都必须显式声明
+# 白名单：knowledge/
 !knowledge/
 !knowledge/**
+
+# 白名单：仅自定义 skills（非第三方）
 !skills/
-!skills/**
+!skills/knowledge-base/
+!skills/knowledge-base/**
+
+# 白名单：scripts/
 !scripts/
 !scripts/**
-!settings.json
+
+# 白名单：其他
 !CLAUDE.md
 !.gitignore
+
+# settings.json 不提交（含敏感 Token）

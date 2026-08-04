@@ -1,4 +1,0 @@
-interface:
-  display_name: "WeChat Connect"
-  short_description: "Bidirectional WeCom bridge — send confirmations to user's WeChat and wait for replies when away from keyboard"
-  default_prompt: "Use $wechat-connect when you need to confirm high-risk operations with the user who may be away from the computer. Send the confirmation via WeChat and wait for a reply before proceeding."

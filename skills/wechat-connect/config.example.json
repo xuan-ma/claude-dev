@@ -1,8 +1,0 @@
-{
-  "corpid": "wwxxxxxxxxxxxxxxxxxxxx",
-  "agentid": 1000002,
-  "secret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "default_user": "YourWeComUserId",
-  "callback_token": "generate_a_random_10_32_char_string",
-  "callback_aeskey": "generate_a_random_43_char_base64_string"
-}

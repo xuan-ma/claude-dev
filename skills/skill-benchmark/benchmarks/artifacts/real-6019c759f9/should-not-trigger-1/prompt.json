@@ -1,8 +1,0 @@
-{
-  "id": "should-not-trigger-1",
-  "text": "请把这篇中文文档翻译成英文。",
-  "should_trigger": false,
-  "expected_skill": "document-summarizer",
-  "expected_route": null,
-  "required_output_signals": []
-}
