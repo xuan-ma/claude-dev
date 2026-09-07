@@ -33,7 +33,12 @@ description: >
   │     ├─ 部分匹配 → 基于文档适配
   │     └─ 无匹配 → 模型兜底
   │
-  └─ 4. 解决后 → 按 references/save-protocol.md 沉淀到对应领域目录
+  └─ 4. 解决后 → 主动问「要沉淀吗？」（见 save-protocol.md 触发约定）
+        │
+        ├─ 用户确认要 → 按 save-protocol.md 写入
+        └─ 沉淀后 → 按 references/health-check.md 做轻量健康检查
+              ├─ 健康 → 结束
+              └─ 触发阈值 → 告警 + 给出优化建议
 ```
 
 ## Routing Table
@@ -63,6 +68,7 @@ description: >
 ## Resources
 
 - `references/save-protocol.md` — 知识沉淀规范
+- `references/health-check.md` — 健康检查阈值和优化策略
 - `references/doc-format.md` — 文档格式模板
 - `~/.claude/knowledge/INDEX.md` — 领域索引
 - `~/.claude/knowledge/<domain>/` — 各领域知识库

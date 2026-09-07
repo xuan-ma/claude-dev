@@ -9,7 +9,14 @@ FILE="$CLAUDE_TOOL_FILE_PATH"
 REPO="$HOME/.claude"
 
 case "$FILE" in
-  */knowledge/* | */skills/* | */settings.json | */CLAUDE.md | */.gitignore)
+  */knowledge/*)
+    cd "$REPO"
+    git add -- "$FILE" 2>/dev/null || true
+    # Regenerate human-readable README when knowledge files change
+    [ "$FILE" != "*/README.md" ] && bash "$REPO/scripts/generate-readme.sh" 2>/dev/null || true
+    git add "$REPO/knowledge/README.md" 2>/dev/null || true
+    ;;
+  */skills/* | */settings.json | */CLAUDE.md | */.gitignore)
     cd "$REPO"
     git add -- "$FILE" 2>/dev/null || true
     ;;
