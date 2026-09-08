@@ -38,7 +38,7 @@ for domain_dir in "$KNOWLEDGE_DIR"/*/; do
     echo "" >> "$OUTPUT"
 
     # List all .md files except index.md
-    echo "| 文档 | 行数 | 说明 |" >> "$OUTPUT"
+    echo "| 文档 | 行数 | 主题 |" >> "$OUTPUT"
     echo "|------|------|------|" >> "$OUTPUT"
 
     for doc in "$domain_dir"/*.md; do
@@ -47,17 +47,11 @@ for domain_dir in "$KNOWLEDGE_DIR"/*/; do
 
         lines=$(wc -l < "$doc")
 
-        # Extract first meaningful description line after the title
-        doc_desc=""
-        while IFS= read -r line; do
-            # Skip title, empty lines, and html comments
-            [[ "$line" =~ ^# ]] && continue
-            [[ -z "${line// }" ]] && continue
-            [[ "$line" =~ ^\> ]] && { doc_desc="${line#> }"; break; }
-        done < "$doc"
-        [ -z "$doc_desc" ] && doc_desc="—"
+        # Extract "## " section headings as a topic outline
+        topics=$(grep -E '^## ' "$doc" | sed 's/^## //' | awk '{printf (NR==1 ? "" : " / ") $0} END {print ""}')
+        [ -z "$topics" ] && topics="—"
 
-        echo "| [$doc_name]($domain/$doc_name) | ${lines} 行 | $doc_desc |" >> "$OUTPUT"
+        echo "| [$doc_name]($domain/$doc_name) | ${lines} 行 | $topics |" >> "$OUTPUT"
     done
 
     echo "" >> "$OUTPUT"

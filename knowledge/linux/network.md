@@ -144,7 +144,15 @@ netstat -tulnp | grep <端口号>
 
 ## SSH
 
-```bash
-# 重启远程服务器 SSH 服务
-# （具体命令取决于发行版）
-```
+### 重启 SSH 服务
+
+**场景：** 远程服务器修改 SSH 配置后，重启服务使配置生效。
+
+**两个版本：**
+
+| 系统版本 | 命令 |
+|----------|------|
+| 老版本（init.d） | `service ssh restart` |
+| 新版本（systemd） | `systemctl restart sshd` |
+
+> 服务名因发行版而异：Debian/Ubuntu 多为 `ssh`，RHEL/CentOS 多为 `sshd`。不确定时先查：`systemctl list-unit-files | grep ssh`
